@@ -1,0 +1,47 @@
+dubbo:
+  application:
+    name: mobile-api
+    logger: slf4j
+  registry:
+    protocol: zookeeper
+    client: curator
+    address: 47.100.39.251:2181
+  consumer:
+    timeout: 5000
+server:
+  port: 8091
+  servlet:
+    contextPath: /v1/api
+logger:
+  dir: /opt/logs/mobile-api
+
+spring:
+  datasource:
+             url: jdbc:mysql://localhost:3306/mobileapi?useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false
+             username: hejian	
+             password: hejian
+# druid 连接池
+             type: com.alibaba.druid.pool.DruidDataSource
+             driver-class-name: com.mysql.jdbc.Driver 
+             filters: stat 
+             maxActive: 20 
+             initialSize: 1 
+             maxWait: 60000 
+             minIdle: 1 
+             timeBetweenEvictionRunsMillis: 60000 
+             minEvictableIdleTimeMillis: 300000 
+             validationQuery: select 'x' 
+             testWhileIdle: true 
+             testOnBorrow: false 
+             testOnReturn: false 
+             poolPreparedStatements: true 
+             maxOpenPreparedStatements: 20 
+mybatis:
+    mapper-locations: classpath:mybatis/mapper/*.xml 
+    type-aliases-package: com.hejian.mobile.client.model.domain 
+#pagehelper分页插件 
+pagehelper: 
+    helperDialect: mysql 
+    reasonable: true 
+    supportMethodsArguments: true 
+    params: count=countSql

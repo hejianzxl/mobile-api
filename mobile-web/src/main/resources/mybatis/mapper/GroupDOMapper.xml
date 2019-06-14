@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hejian.mobile.client.mapper.GroupDOMapper">
+  <resultMap id="BaseResultMap" type="com.hejian.mobile.client.model.domain.GroupDO">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="group_name" jdbcType="VARCHAR" property="groupName" />
+    <result column="min_code" jdbcType="VARCHAR" property="minCode" />
+    <result column="max_code" jdbcType="VARCHAR" property="maxCode" />
+    <result column="owner" jdbcType="VARCHAR" property="owner" />
+    <result column="is_deleted" jdbcType="INTEGER" property="isDeleted" />
+    <result column="creator" jdbcType="VARCHAR" property="creator" />
+    <result column="modifier" jdbcType="VARCHAR" property="modifier" />
+    <result column="gmt_created" jdbcType="TIMESTAMP" property="gmtCreated" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, group_name, min_code, max_code, owner, is_deleted, creator, modifier, gmt_created, 
+    gmt_modified
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from m_group
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from m_group
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.hejian.mobile.client.model.domain.GroupDO">
+    insert into m_group (id, group_name, min_code, 
+      max_code, owner, is_deleted, 
+      creator, modifier, gmt_created, 
+      gmt_modified)
+    values (#{id,jdbcType=BIGINT}, #{groupName,jdbcType=VARCHAR}, #{minCode,jdbcType=VARCHAR}, 
+      #{maxCode,jdbcType=VARCHAR}, #{owner,jdbcType=VARCHAR}, #{isDeleted,jdbcType=INTEGER}, 
+      #{creator,jdbcType=VARCHAR}, #{modifier,jdbcType=VARCHAR}, #{gmtCreated,jdbcType=TIMESTAMP}, 
+      #{gmtModified,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.hejian.mobile.client.model.domain.GroupDO">
+    insert into m_group
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="groupName != null">
+        group_name,
+      </if>
+      <if test="minCode != null">
+        min_code,
+      </if>
+      <if test="maxCode != null">
+        max_code,
+      </if>
+      <if test="owner != null">
+        owner,
+      </if>
+      <if test="isDeleted != null">
+        is_deleted,
+      </if>
+      <if test="creator != null">
+        creator,
+      </if>
+      <if test="modifier != null">
+        modifier,
+      </if>
+      <if test="gmtCreated != null">
+        gmt_created,
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="groupName != null">
+        #{groupName,jdbcType=VARCHAR},
+      </if>
+      <if test="minCode != null">
+        #{minCode,jdbcType=VARCHAR},
+      </if>
+      <if test="maxCode != null">
+        #{maxCode,jdbcType=VARCHAR},
+      </if>
+      <if test="owner != null">
+        #{owner,jdbcType=VARCHAR},
+      </if>
+      <if test="isDeleted != null">
+        #{isDeleted,jdbcType=INTEGER},
+      </if>
+      <if test="creator != null">
+        #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="modifier != null">
+        #{modifier,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreated != null">
+        #{gmtCreated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hejian.mobile.client.model.domain.GroupDO">
+    update m_group
+    <set>
+      <if test="groupName != null">
+        group_name = #{groupName,jdbcType=VARCHAR},
+      </if>
+      <if test="minCode != null">
+        min_code = #{minCode,jdbcType=VARCHAR},
+      </if>
+      <if test="maxCode != null">
+        max_code = #{maxCode,jdbcType=VARCHAR},
+      </if>
+      <if test="owner != null">
+        owner = #{owner,jdbcType=VARCHAR},
+      </if>
+      <if test="isDeleted != null">
+        is_deleted = #{isDeleted,jdbcType=INTEGER},
+      </if>
+      <if test="creator != null">
+        creator = #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="modifier != null">
+        modifier = #{modifier,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreated != null">
+        gmt_created = #{gmtCreated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null">
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hejian.mobile.client.model.domain.GroupDO">
+    update m_group
+    set group_name = #{groupName,jdbcType=VARCHAR},
+      min_code = #{minCode,jdbcType=VARCHAR},
+      max_code = #{maxCode,jdbcType=VARCHAR},
+      owner = #{owner,jdbcType=VARCHAR},
+      is_deleted = #{isDeleted,jdbcType=INTEGER},
+      creator = #{creator,jdbcType=VARCHAR},
+      modifier = #{modifier,jdbcType=VARCHAR},
+      gmt_created = #{gmtCreated,jdbcType=TIMESTAMP},
+      gmt_modified = #{gmtModified,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
