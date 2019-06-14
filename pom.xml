@@ -10,6 +10,7 @@
 	<modules>
 		<module>mobile-client</module>
 		<module>mobile-core</module>
+		<module>mobile-web</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -23,6 +24,18 @@
 
 	<dependencyManagement>
 		<dependencies>
+			<!-- 分页插件 -->
+			<dependency>
+				<groupId>com.github.pagehelper</groupId>
+				<artifactId>pagehelper</artifactId>
+				<version>5.0.4</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>javax.servlet-api</artifactId>
+				<version>3.1.0</version>
+				<scope>provided</scope>
+			</dependency>
 			<dependency>
 				<groupId>mysql</groupId>
 				<artifactId>mysql-connector-java</artifactId>

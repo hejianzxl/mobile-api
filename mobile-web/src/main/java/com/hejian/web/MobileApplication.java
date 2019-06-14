@@ -3,9 +3,11 @@ package com.hejian.web;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 
 @SpringBootApplication
 @MapperScan(value = "com.hejian.mobile.client.mapper")
+@ServletComponentScan
 public class MobileApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MobileApplication.class, args);
