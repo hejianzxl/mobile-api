@@ -1,4 +1,4 @@
-package com.hejian.mobile.client.define;
+package org.mobile.api.util.define;
 
 public enum SecurityType {
 	Test(-1, false), None(0, false), RegisteredDevice(256, false), User(512, true), UserTrustedDevice(1024, true),

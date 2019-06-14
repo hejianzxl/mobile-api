@@ -1,11 +1,12 @@
-package com.hejian.mobile.client.annotation;
+package org.mobile.api.util.annotation;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@Target({ java.lang.annotation.ElementType.PARAMETER })
+@Target({java.lang.annotation.ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface ApiAutowired {
-	String value();
+public @interface DesignedErrorCode
+{
+  int[] value();
 }

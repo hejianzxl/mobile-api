@@ -11,6 +11,7 @@
 		<module>mobile-client</module>
 		<module>mobile-core</module>
 		<module>mobile-web</module>
+		<module>mobile-api-util</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>

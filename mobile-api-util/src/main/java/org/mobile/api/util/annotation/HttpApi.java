@@ -1,10 +1,10 @@
-package com.hejian.mobile.client.annotation;
+package org.mobile.api.util.annotation;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import com.hejian.mobile.client.define.SecurityType;
+import org.mobile.api.util.define.SecurityType;
 
 @Target({java.lang.annotation.ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)

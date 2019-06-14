@@ -1,4 +1,4 @@
-package com.hejian.mobile.client.annotation;
+package org.mobile.api.util.annotation;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
